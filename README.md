@@ -20,7 +20,7 @@ SAMIST utilizes [PySimpleGui](https://www.pysimplegui.org/en/latest/), and has n
 - Use the 'Device' dropdown to select between CUDA and CPU execution. Note that CPU execution is significantly slower.
 - Select the 'Model Tyle' using the dropdown. Ensure that the model type you selected corresponds to the checkpoint you are using, or the program will hang.
 - Click 'Browse Model' to open up a system dialog and select the model path.
-- To the right of the 'Image File' textbox, select 'Browse' to load find an iage, then press 'Load Image' to load it for segmentation. The image thumbnail will then appear in the GUI. The GUI looks like this after an image is loaded:
+- To the right of the 'Image File' textbox, select 'Browse' to load find an image, then press 'Load Image' to load it for segmentation. The image thumbnail will then appear in the GUI. The GUI looks like this after an image is loaded:
 
 ![samist](https://user-images.githubusercontent.com/108030031/232975306-77545c3f-c0f3-4c5d-91eb-5e1e434bbb53.png)
 
