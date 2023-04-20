@@ -4,7 +4,7 @@ Segment Anything Model (SAM) Image Segmentation Tool. A python GUI for image seg
 ## Installation
 
 1. Clone this repository and navigate into its directory
-2. Install dependencies, i.e. using `pip install . -r requirements.txt`
+2. Install dependencies, i.e. using `pip install -r requirements.txt`
 3. Download a model checkpoint from Meta AI:
   - `vit_h`: [ViT-H SAM model.](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth), 363M parameters
   - `vit_l`: [ViT-L SAM model.](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth), 308M parameters
