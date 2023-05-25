@@ -6,9 +6,9 @@ Segment Anything Model (SAM) Image Segmentation Tool. A python GUI for image seg
 1. Clone this repository and navigate into its directory
 2. Install dependencies, i.e. using `pip install -r requirements.txt`
 3. Download a model checkpoint from Meta AI:
-  - `vit_h`: [ViT-H SAM model.](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth), 363M parameters
-  - `vit_l`: [ViT-L SAM model.](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth), 308M parameters
-  - `vit_b`: [ViT-B SAM model.](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth), 91M parameters
+  - `vit_h`: [ViT-H SAM model](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth), 363M parameters
+  - `vit_l`: [ViT-L SAM model](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth), 308M parameters
+  - `vit_b`: [ViT-B SAM model](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth), 91M parameters
 4. Run the script using `python main.py`
 
 ## Usage
@@ -18,7 +18,7 @@ SAMIST utilizes [PySimpleGui](https://www.pysimplegui.org/en/latest/), and has n
 ![samist0](https://user-images.githubusercontent.com/108030031/232980570-dd181966-96cf-4327-8c9f-1980749b60a0.png)
 
 - Use the 'Device' dropdown to select between CUDA and CPU execution. Note that CPU execution is significantly slower.
-- Select the 'Model Tyle' using the dropdown. Ensure that the model type you selected corresponds to the checkpoint you are using, or the program will hang.
+- Select the 'Model Type' using the dropdown. Ensure that the model type you selected corresponds to the checkpoint you are using, or the program will hang.
 - Click 'Browse Model' to open up a system dialog and select the model path.
 - To the right of the 'Image File' textbox, select 'Browse' to load find an image, then press 'Load Image' to load it for segmentation. The image thumbnail will then appear in the GUI. The GUI looks like this after an image is loaded:
 
