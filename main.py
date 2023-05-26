@@ -1,3 +1,9 @@
+# SAMIST - Segment Anything Model Image Segmentation Tool
+# A python GUI for image segmentation using SAM by Meta AI
+
+# By Alexander Dibrov
+# Visit me at https://github.com/dibrale/
+
 import tkinter
 from tkinter import filedialog
 import os
@@ -6,8 +12,6 @@ import cv2
 import numpy as np
 from PIL import Image, ImageTk
 from segment_anything import sam_model_registry, SamAutomaticMaskGenerator
-
-# os.system('')
 
 root = tkinter.Tk()
 root.withdraw()     # use to hide tkinter window
