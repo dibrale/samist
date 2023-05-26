@@ -145,7 +145,7 @@ if __name__ == '__main__':
             sg.Input(size=(25, 1), default_text=sam_checkpoint, key='-MODEL_TEXT-', enable_events=True, readonly=True),
             sg.FileBrowse(button_text="Browse Model", key='-MODEL_BROWSE-',
                           file_types=[("PTH Files", '*.pth'), ("All Files", '.')], initial_folder=os.getcwd(),
-                          tooltip="Download vial links here: https://github.com/facebookresearch/segment-anything"),
+                          tooltip="Download via links here: https://github.com/facebookresearch/segment-anything"),
         ],
         [sg.HSeparator()],
         [sg.Image(key="-IMAGE-")],
