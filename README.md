@@ -1,3 +1,5 @@
+![SAM_logo.png](SAM_logo.png)
+
 # SAMIST
 Segment Anything Model (SAM) Image Segmentation Tool. A python GUI for image segmentation using SAM by Meta AI. 
 

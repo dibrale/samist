@@ -4,6 +4,34 @@
 # By Alexander Dibrov
 # Visit me at https://github.com/dibrale/
 
+splash_string = 'Starting Segment Anything Model Image Segmentation Tool (SAMIST)'
+
+# Import splash screen when run as executable
+try:
+    import pyi_splash
+
+    # Safe splash screen update
+    def splash_update(text: str | None, splash_str=splash_string):
+        if text:
+            pyi_splash.update_text(f"{splash_string}\n{text}")
+        else:
+            pyi_splash.update_text(splash_string)
+
+    # Safe splash screen close
+    def splash_close():
+        pyi_splash.close()
+
+except ImportError:
+    pyi_splash = None
+
+    def splash_close():
+        pass
+
+    def splash_update(text: str | None, splash_str=''):
+        pass
+
+splash_update(None)
+
 import tkinter
 from tkinter import filedialog
 import os
@@ -117,7 +145,8 @@ def prepare_masked(masks_in):
 
 # Main function
 if __name__ == '__main__':
-    print('Starting Segment Anything Model Image Segmentation Tool (SAMIST)')
+    print(splash_string)
+    splash_close()
 
     layout = [
         [
