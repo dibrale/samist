@@ -1,5 +1,7 @@
 ![SAM_logo.png](SAM_logo.png)
 
+![](https://img.shields.io/librariesio/github/dibrale/samist) ![](https://img.shields.io/github/license/dibrale/samist) ![](https://img.shields.io/github/v/release/dibrale/samist)
+
 # SAMIST
 Segment Anything Model (SAM) Image Segmentation Tool. A python GUI for image segmentation using SAM by Meta AI. 
 
