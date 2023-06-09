@@ -98,7 +98,10 @@ def segmentation(pps, area, st, iou):
 
     try:
         masks_raw = mask_generator.generate(image)
-    except RuntimeError:
+    except RuntimeError as e:
+        error_type = str(type(e))
+        error_str = error_type.lstrip("<class '").rstrip("'>")
+        print(f"{error_str}: {e}")
         return [[], []]
     sorted_masks = sorted(masks_raw, key=(lambda x: x['area']), reverse=True)
     return [sorted_masks, prepare_masked(sorted_masks)]

@@ -1,0 +1,8 @@
+/main.onefile-build/
+/main.dist/
+/main.build/
+/dist/
+/build/
+/main.spec
+/requirements_old.txt
+/samist.spec
