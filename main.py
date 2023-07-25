@@ -32,6 +32,7 @@ except ImportError:
 
 splash_update(None)
 
+import torch
 import tkinter
 from tkinter import filedialog
 import os
@@ -39,7 +40,7 @@ import PySimpleGUI as sg
 import cv2
 import numpy as np
 from PIL import Image, ImageTk
-from segment_anything import sam_model_registry, SamAutomaticMaskGenerator
+from segment_anything import sam_model_registry, SamAutomaticMaskGenerator, build_sam_vit_b
 
 root = tkinter.Tk()
 root.withdraw()     # use to hide tkinter window
@@ -52,6 +53,12 @@ reference_image = []
 out_full_res = []
 out_bw = []
 out_cropped = []
+prior_sam = {
+    'sam_checkpoint': '',
+    'model_type': '',
+    'device': ''
+}
+sam = build_sam_vit_b()
 
 # Default values
 sam_checkpoint = "sam_vit_h_4b8939.pth"
@@ -83,8 +90,20 @@ def save_mask_pic(mask_array):
 
 # Segmentation function taking slider parameters and returning masks in various formats
 def segmentation(pps, area, st, iou):
-    sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
-    sam.to(device=device)
+    global sam
+    if prior_sam['sam_checkpoint'] != sam_checkpoint or prior_sam['model_type'] != model_type or prior_sam['device'] != device:
+        for layer in sam.children():
+            if hasattr(layer, 'reset_parameters'):
+                layer.reset_parameters()
+        del sam
+        torch.cuda.empty_cache()
+        with torch.no_grad():
+            sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
+        sam.to(device=device)
+
+        prior_sam['sam_checkpoint'] = sam_checkpoint
+        prior_sam['model_type'] = model_type
+        prior_sam['device'] = device
 
     mask_generator = SamAutomaticMaskGenerator(
         model=sam,
