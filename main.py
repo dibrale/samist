@@ -63,6 +63,8 @@ min_area = 100
 stability_thresh = 0.95
 predict_iou = 0.85
 
+sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
+sam.to(device=device)
 
 # General function for saving masks
 def save_mask_pic(mask_array):
@@ -83,8 +85,6 @@ def save_mask_pic(mask_array):
 
 # Segmentation function taking slider parameters and returning masks in various formats
 def segmentation(pps, area, st, iou):
-    sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
-    sam.to(device=device)
 
     mask_generator = SamAutomaticMaskGenerator(
         model=sam,
